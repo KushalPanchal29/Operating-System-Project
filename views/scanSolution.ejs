@@ -1,0 +1,70 @@
+<%- include('./includes/head.ejs') %>
+
+    <div class="center">
+        <h1 class="headings">SCAN <span>/</span> C-SCAN</h1>
+    </div>
+
+    <% for (var i=0; i < completed_processes.length; i++) { %>
+        <h1>
+            <%= completed_processes[i].id %>
+        </h1>
+        <% } %>
+
+
+            <canvas id="myChart" style="width: 100%"></canvas>
+
+            <script>
+                // const scanController = require("../server/controller/scanController.js")
+                
+                // const xAxis = scanController.xAxis;
+                // const yAxis = scanController.yAxis
+                // console.log(xAxis , yAxis)
+                const ctx = document.getElementById("myChart");
+
+                new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: yAxis,
+                        datasets: [
+                            {
+                                data: xAxis,
+                                borderWidth: 3,
+                            },
+                        ],
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                        },
+                        indexAxis: "y",
+                        scales: {
+                            y: {
+                                position: "left",
+                                title: {
+                                    display: true,
+                                    text: "Process Number",
+                                    font: {
+                                        size: 20,
+                                    },
+                                },
+                            },
+                            x: {
+                                position: "top",
+                                grid: {
+                                    display: true,
+                                },
+                                title: {
+                                    display: true,
+                                    text: "Burst time",
+                                    font: {
+                                        size: 20,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                });
+            </script>
+            <%- include('./includes/end.ejs') %>

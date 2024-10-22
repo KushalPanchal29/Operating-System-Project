@@ -1,0 +1,26 @@
+<%- include('./includes/head.ejs') %>
+<style>
+  body{
+    background-image: url("imgs/image.png");
+  }
+</style>
+
+<h1 class="headings2" style="margin-bottom: 3.5rem; text-align: center">
+  MRU PAGE REPLACEMENT ALGORITHM
+</h1>
+<div class="container" style="width: 100rem">
+  <p style="color: white; font-size: 1.25rem">
+    In an operating system that uses paging for memory management, a page
+    replacement algorithm is needed to decide which page needs to be replaced
+    when a new page comes in. In most recently used page replacement algorithm
+    (MRU page replacement algorthm), page replacement will take place by the
+    currently arrived page and it will replace the most recently used page. If
+    the currently arrived page is already present in our frame(collection of
+    pages), it is considered as a page hit and if the currently arrived page is
+    not present in the frame, it is considered as a page fault
+  </p>
+
+  <button class="sim-button"><a href="/mru">Simulator</a></button>
+  
+</div>
+<%- include('./includes/end.ejs') %>
